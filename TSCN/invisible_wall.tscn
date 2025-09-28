@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://co44pt0bdyh5e"]
+
+[ext_resource type="Texture2D" uid="uid://n2tymy56b0oh" path="res://Picture Assets/invisiblewall.png" id="1_7ki2h"]
+[ext_resource type="Script" uid="uid://cjet1ag42gkm4" path="res://dotgd/static_body_2d.gd" id="1_n76kt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n76kt"]
+size = Vector2(8, 8)
+
+[sub_resource type="GDScript" id="GDScript_5fkut"]
+script/source = "extends Sprite2D
+
+func _ready():
+	visible=Engine.is_editor_hint()
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_n76kt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_n76kt")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2"]
+texture = ExtResource("1_7ki2h")
+script = SubResource("GDScript_5fkut")
