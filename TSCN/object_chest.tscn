@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_uawxf"]
 [ext_resource type="Texture2D" uid="uid://bcxupmxhci531" path="res://Picture Assets/1bit graphics HUD 24x24.png" id="3_4njl1"]
+
 [ext_resource type="Script" uid="uid://ddsypwaccs000" path="res://TSCN/sprite_2d_2.gd" id="3_rdrva"]
+
 
 [sub_resource type="GDScript" id="GDScript_uawxf"]
 script/source = "extends StaticBody2D
