@@ -300,9 +300,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body==nearby_interactable:
-		nearby_interactable.deactivate()
 		nearby_interactable = null
 		interaction_prompt.is_prompted(false)
+		if nearby_interactable.has_method(\"deactivate\"):
+			nearby_interactable.deactivate()
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
@@ -625,7 +626,7 @@ size = Vector2(24.615385, 8.888888)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njj43"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
 texture = ExtResource("1_w5lpw")
 0:0/0 = 0
 1:0/0 = 0
@@ -724,12 +725,12 @@ texture = ExtResource("1_w5lpw")
 13:15/0 = 0
 15:15/0 = 0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cmywb"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0hol4"]
 scenes/1/scene = ExtResource("5_o8fjl")
 
 [sub_resource type="TileSet" id="TileSet_epypp"]
-sources/0 = SubResource("TileSetAtlasSource_njj43")
-sources/1 = SubResource("TileSetScenesCollectionSource_cmywb")
+sources/0 = SubResource("TileSetAtlasSource_0e48y")
+sources/1 = SubResource("TileSetScenesCollectionSource_0hol4")
 
 [node name="Node2D" type="Node2D"]
 
@@ -783,7 +784,7 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="Layer 2 - objects" type="TileMapLayer" parent="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAQD9/wAAAQAAAAAAAQA=")
 tile_set = SubResource("TileSet_epypp")
 
 [connection signal="body_entered" from="Node2D/CharacterBody2D/Area2D" to="Node2D/CharacterBody2D" method="_on_area_2d_body_entered"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=56 format=4 uid="uid://csly8bbfbxndg"]
+[gd_scene load_steps=59 format=4 uid="uid://csly8bbfbxndg"]
 
 [ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_w5lpw"]
 [ext_resource type="PackedScene" uid="uid://co44pt0bdyh5e" path="res://TSCN/invisible_wall.tscn" id="2_53sty"]
+[ext_resource type="Script" uid="uid://cl1qriv5macry" path="res://TSCN/node_2d.gd" id="3_53sty"]
 [ext_resource type="Texture2D" uid="uid://cs6kvquaswf72" path="res://Picture Assets/interaction_prompt.png" id="3_g56ls"]
 [ext_resource type="Script" uid="uid://faqa2w4yil4q" path="res://dotgd/interaction_prompt.gd" id="4_1sm3s"]
 [ext_resource type="PackedScene" uid="uid://drffhuqvefppr" path="res://TSCN/object_chest.tscn" id="5_o8fjl"]
+[ext_resource type="Script" uid="uid://lys8mpkc820o" path="res://dotgd/grid_container.gd" id="6_l1t7o"]
+[ext_resource type="Texture2D" uid="uid://bcxupmxhci531" path="res://Picture Assets/1bit graphics HUD 24x24.png" id="7_w5lpw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtcfe"]
 texture = ExtResource("1_w5lpw")
@@ -229,7 +232,8 @@ script/source = "extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaction_prompt = $interaction_prompt
-#@onready var chest: GridContainer = get_node(\"../chest\")
+@onready var chest: GridContainer = get_node(\"../chest\")
+var chest_logic = chest_instance.get_node(\"root/test\")
 const SPEED := 20.0
 var last_dir: String = \"down\"   # remember last facing direction
 var nearby_interactable: Node = null
@@ -290,19 +294,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed('ui_accept') and nearby_interactable:
 		if nearby_interactable.has_method(\"activate\"):
 			nearby_interactable.activate()
+			chest.is_displayed(true)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group('interactable'):
 		nearby_interactable=body
-		
 		interaction_prompt.is_prompted(true)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body==nearby_interactable:
-		nearby_interactable.deactivate()
 		nearby_interactable = null
 		interaction_prompt.is_prompted(false)
+		chest.is_displayed(false)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
@@ -625,7 +629,7 @@ size = Vector2(24.615385, 8.888888)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njj43"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
 texture = ExtResource("1_w5lpw")
 0:0/0 = 0
 1:0/0 = 0
@@ -724,19 +728,19 @@ texture = ExtResource("1_w5lpw")
 13:15/0 = 0
 15:15/0 = 0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cmywb"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0hol4"]
 scenes/1/scene = ExtResource("5_o8fjl")
 
 [sub_resource type="TileSet" id="TileSet_epypp"]
-sources/0 = SubResource("TileSetAtlasSource_njj43")
-sources/1 = SubResource("TileSetScenesCollectionSource_cmywb")
+sources/0 = SubResource("TileSetAtlasSource_0e48y")
+sources/1 = SubResource("TileSetScenesCollectionSource_0hol4")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Layer 1" type="TileMapLayer" parent="."]
 use_parent_material = true
 position = Vector2(-16, 0)
-tile_map_data = PackedByteArray("AAD9/wEAAAACAAIAAAD+/wEAAAADAAIAAAAAAAEAAAADAAIAAAABAAEAAAADAAIAAAADAAEAAAABAAMAAAACAAEAAAADAAIAAAD9/wAAAAADAAQAAAD//wEAAAADAAIAAAD9////AAADAAQAAAD9//7/AAADAAMAAAD+//7/AAABAAQAAAD///7/AAABAAQAAAAAAP7/AAABAAQAAAACAP7/AAABAAQAAAACAP//AAAPAAAAAAABAAAAAAAAAAUAAAAAAAAAAAAAAAUAAAD//wAAAAAAAAUAAAD+/wAAAAAAAAUAAAD+////AAAAAAUAAAD/////AAAAAAUAAAAAAP//AAAAAAUAAAABAP//AAAAAAUAAAADAAAAAAABAAIAAAADAP//AAABAAIAAAADAP7/AAACAAQAAAACAAAAAAAPAAAAAAABAP7/AAABAAQAAAA=")
+tile_map_data = PackedByteArray("AAD9/wEAAAACAAIAAAD+/wEAAAADAAIAAAAAAAEAAAADAAIAAAABAAEAAAADAAIAAAADAAEAAAABAAMAAAACAAEAAAADAAIAAAD9/wAAAAADAAQAAAD//wEAAAADAAIAAAD9////AAADAAQAAAD9//7/AAADAAMAAAD+//7/AAABAAQAAAD///7/AAABAAQAAAAAAP7/AAABAAQAAAABAP7/AAABAAQAAAACAP7/AAABAAQAAAACAP//AAAPAAAAAAABAAAAAAAAAAUAAAAAAAAAAAAAAAUAAAD//wAAAAAAAAUAAAD+/wAAAAAAAAUAAAD+////AAAAAAUAAAD/////AAAAAAUAAAAAAP//AAAAAAUAAAABAP//AAAAAAUAAAADAAAAAAABAAIAAAADAP//AAABAAIAAAADAP7/AAACAAQAAAACAAAAAAAPAAAAAAA=")
 tile_set = SubResource("TileSet_0e48y")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -751,6 +755,7 @@ tile_set = SubResource("TileSet_rj586")
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
+script = ExtResource("3_53sty")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(-8, 0)
@@ -785,6 +790,41 @@ z_as_relative = false
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAQA=")
 tile_set = SubResource("TileSet_epypp")
+
+[node name="chest" type="GridContainer" parent="Node2D"]
+top_level = true
+offset_left = 15.0
+offset_top = -33.0
+offset_right = 51.0
+offset_bottom = -6.0
+columns = 2
+script = ExtResource("6_l1t7o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/chest"]
+position = Vector2(10, 10)
+texture = ExtResource("7_w5lpw")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="Button" type="Button" parent="Node2D/chest"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Node2D/chest"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Node2D/chest"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="Node2D/chest"]
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="Node2D/CharacterBody2D/Area2D" to="Node2D/CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Node2D/CharacterBody2D/Area2D" to="Node2D/CharacterBody2D" method="_on_area_2d_body_exited"]

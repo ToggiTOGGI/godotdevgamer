@@ -12,10 +12,13 @@ func _ready():
 func activate():
 	chestui.is_displayed(true)
 	print(\"Chest opened!\")
-	get_tree().change_scene_to_file(\"res://outside.tscn\")
 func deactivate():
 	chestui.is_displayed(false)
 	print(\"Chest closed!\")
+
+
+func _on_button_3_pressed() -> void:
+	pass # Replace with function body.
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5jpa"]
@@ -49,7 +52,6 @@ offset_left = -10.0
 offset_top = -10.0
 offset_right = -2.0
 offset_bottom = -2.0
-expand_icon = true
 
 [node name="Button" type="Button" parent="StaticBody2D/Sprite2D2"]
 offset_left = 2.0
