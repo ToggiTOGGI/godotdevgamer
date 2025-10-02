@@ -15,10 +15,6 @@ run/main_scene="uid://b2r01wi0awmk2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Picture Assets/icon.svg"
 
-[autoload]
-
-player_info="*res://player_info.gd"
-
 [display]
 
 window/zstd/window_log_size=27
