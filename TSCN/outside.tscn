@@ -1,13 +1,13 @@
 [gd_scene load_steps=53 format=4 uid="uid://bepc1liu45su4"]
 
-[ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_mjsed"]
-[ext_resource type="Texture2D" uid="uid://cs6kvquaswf72" path="res://Picture Assets/interaction_prompt.png" id="2_24pxs"]
-[ext_resource type="Script" uid="uid://faqa2w4yil4q" path="res://dotgd/interaction_prompt.gd" id="3_r8r3b"]
-[ext_resource type="PackedScene" uid="uid://drffhuqvefppr" path="res://TSCN/object_chest.tscn" id="4_vq1sk"]
-[ext_resource type="PackedScene" uid="uid://d030v7kyqeiop" path="res://TSCN/npc_1.tscn" id="5_7y0r7"]
+[ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_pyvco"]
+[ext_resource type="Texture2D" uid="uid://cs6kvquaswf72" path="res://Picture Assets/interaction_prompt.png" id="2_i7vbf"]
+[ext_resource type="Script" uid="uid://faqa2w4yil4q" path="res://dotgd/interaction_prompt.gd" id="3_ku5i6"]
+[ext_resource type="PackedScene" uid="uid://drffhuqvefppr" path="res://TSCN/object_chest.tscn" id="4_nnj4j"]
+[ext_resource type="PackedScene" uid="uid://d030v7kyqeiop" path="res://npc_1.tscn" id="5_i7vbf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyvco"]
-texture = ExtResource("1_mjsed")
+texture = ExtResource("1_pyvco")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -217,147 +217,147 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(64, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtcfe"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(80, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(64, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(64, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(64, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ei405"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nhjh"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8dv2"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gt76g"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjha6"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fr6y"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjqkl"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs4d3"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(80, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(80, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(80, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebxd8"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 176, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2u7jv"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24dk6"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mryly"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(112, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kq1c5"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 176, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ornx7"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cnnru"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_540hr"]
-atlas = ExtResource("1_mjsed")
+atlas = ExtResource("1_pyvco")
 region = Rect2(96, 128, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t0m8u"]
@@ -537,11 +537,11 @@ size = Vector2(24.615385, 8.888888)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmfkn"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_pyvco"]
-scenes/1/scene = ExtResource("4_vq1sk")
-scenes/2/scene = ExtResource("5_7y0r7")
+scenes/1/scene = ExtResource("4_nnj4j")
+scenes/2/scene = ExtResource("5_i7vbf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7vbf"]
-texture = ExtResource("1_mjsed")
+texture = ExtResource("1_pyvco")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -669,7 +669,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_pyvco")
 sources/1 = SubResource("TileSetAtlasSource_i7vbf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ku5i6"]
-texture = ExtResource("1_mjsed")
+texture = ExtResource("1_pyvco")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -820,8 +820,8 @@ shape = SubResource("RectangleShape2D_mvw1c")
 [node name="interaction_prompt" type="Sprite2D" parent="Node2D/CharacterBody2D"]
 z_index = 5
 position = Vector2(0, -12)
-texture = ExtResource("2_24pxs")
-script = ExtResource("3_r8r3b")
+texture = ExtResource("2_i7vbf")
+script = ExtResource("3_ku5i6")
 
 [node name="Area2D" type="Area2D" parent="Node2D/CharacterBody2D"]
 
@@ -830,7 +830,7 @@ shape = SubResource("RectangleShape2D_dmfkn")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D"]
 position = Vector2(-8, 0)
-zoom = Vector2(6, 6)
+zoom = Vector2(8, 8)
 limit_left = -128
 limit_top = -96
 limit_right = 208
