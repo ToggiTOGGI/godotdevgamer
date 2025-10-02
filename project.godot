@@ -17,7 +17,7 @@ config/icon="res://Picture Assets/icon.svg"
 
 [autoload]
 
-player_info="*res://player_info.gd"
+PlayerInfo="*res://dotgd/player_info.gd"
 
 [display]
 
