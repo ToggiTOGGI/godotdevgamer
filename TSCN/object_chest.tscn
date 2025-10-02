@@ -1,23 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://drffhuqvefppr"]
+[gd_scene load_steps=4 format=3 uid="uid://drffhuqvefppr"]
 
-[ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_uawxf"]
-[ext_resource type="Texture2D" uid="uid://bcxupmxhci531" path="res://Picture Assets/1bit graphics HUD 24x24.png" id="3_4njl1"]
-
-[ext_resource type="Script" uid="uid://ddsypwaccs000" path="res://TSCN/sprite_2d_2.gd" id="3_rdrva"]
-
+[ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_nkt7f"]
 
 [sub_resource type="GDScript" id="GDScript_uawxf"]
 script/source = "extends StaticBody2D
-@onready var chestui: = $Sprite2D2
 func _ready():
 	add_to_group(\"interactable\")
 func activate():
-	chestui.is_displayed(true)
-	print(\"Chest opened!\")
-	get_tree().change_scene_to_file(\"res://outside.tscn\")
-func deactivate():
-	chestui.is_displayed(false)
-	print(\"Chest closed!\")
+	get_tree().change_scene_to_file(\"res://TSCN/outside.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5jpa"]
@@ -28,47 +18,13 @@ size = Vector2(16, 4)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = SubResource("GDScript_uawxf")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-y_sort_enabled = true
-texture = ExtResource("1_uawxf")
-region_enabled = true
-region_rect = Rect2(144, 0, 16, 16)
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.445, 6)
 scale = Vector2(0.935, 1)
 shape = SubResource("RectangleShape2D_p5jpa")
 
-[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1, -19)
-texture = ExtResource("3_4njl1")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2"]
+position = Vector2(-0.47593582, -6)
+texture = ExtResource("1_nkt7f")
 region_enabled = true
-region_rect = Rect2(0, 0, 24, 24)
-script = ExtResource("3_rdrva")
-
-[node name="Button3" type="Button" parent="StaticBody2D/Sprite2D2"]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = -2.0
-offset_bottom = -2.0
-expand_icon = true
-
-[node name="Button" type="Button" parent="StaticBody2D/Sprite2D2"]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 10.0
-offset_bottom = 10.0
-
-[node name="Button2" type="Button" parent="StaticBody2D/Sprite2D2"]
-offset_left = 2.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = -2.0
-
-[node name="Button4" type="Button" parent="StaticBody2D/Sprite2D2"]
-offset_left = -10.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 10.0
-
-[connection signal="pressed" from="StaticBody2D/Sprite2D2/Button3" to="StaticBody2D" method="_on_button_3_pressed"]
+region_rect = Rect2(144, 0, 16, 16)

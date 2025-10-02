@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://co44pt0bdyh5e"]
 
 [ext_resource type="Texture2D" uid="uid://n2tymy56b0oh" path="res://Picture Assets/invisiblewall.png" id="1_7ki2h"]
-[ext_resource type="Script" uid="uid://cjet1ag42gkm4" path="res://dotgd/static_body_2d.gd" id="1_n76kt"]
+[ext_resource type="Script" uid="uid://bg3kol1v7rlwv" path="res://dotgd/npc_dude.gd" id="1_n76kt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n76kt"]
 size = Vector2(8, 8)
