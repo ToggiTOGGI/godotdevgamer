@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6kvquaswf72" path="res://Picture Assets/interaction_prompt.png" id="2_i7vbf"]
 [ext_resource type="Script" uid="uid://faqa2w4yil4q" path="res://dotgd/interaction_prompt.gd" id="3_ku5i6"]
 [ext_resource type="PackedScene" uid="uid://drffhuqvefppr" path="res://TSCN/object_chest.tscn" id="4_nnj4j"]
-[ext_resource type="PackedScene" uid="uid://d030v7kyqeiop" path="res://npc_1.tscn" id="5_i7vbf"]
+[ext_resource type="PackedScene" uid="uid://cwih6o4y4q240" path="res://TSCN/npc_1.tscn" id="5_i7vbf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyvco"]
 texture = ExtResource("1_pyvco")
