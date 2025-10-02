@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="testgamer"
-run/main_scene="uid://csly8bbfbxndg"
+run/main_scene="uid://c4pson4ywocf1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Picture Assets/icon.svg"
+
+[autoload]
+
+player_info="*res://player_info.gd"
 
 [display]
 

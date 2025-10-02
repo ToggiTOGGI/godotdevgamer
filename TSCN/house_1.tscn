@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://csly8bbfbxndg"]
+[gd_scene load_steps=58 format=4 uid="uid://c4pson4ywocf1"]
 
 [ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_w5lpw"]
 [ext_resource type="PackedScene" uid="uid://co44pt0bdyh5e" path="res://TSCN/invisible_wall.tscn" id="2_53sty"]
