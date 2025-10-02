@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://drffhuqvefppr"]
+[gd_scene load_steps=5 format=3 uid="uid://drffhuqvefppr"]
 
-[ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_uawxf"]
 [ext_resource type="Texture2D" uid="uid://bcxupmxhci531" path="res://Picture Assets/1bit graphics HUD 24x24.png" id="3_4njl1"]
 [ext_resource type="Script" uid="uid://ddsypwaccs000" path="res://dotgd/sprite_2d_2.gd" id="3_rdrva"]
 
@@ -25,12 +24,6 @@ size = Vector2(16, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = SubResource("GDScript_uawxf")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-y_sort_enabled = true
-texture = ExtResource("1_uawxf")
-region_enabled = true
-region_rect = Rect2(144, 0, 16, 16)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.445, 6)
