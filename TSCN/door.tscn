@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bvpcrxjsu5w2f" path="res://dotgd/door_body.gd" id="1_kg27j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0ghi"]
-size = Vector2(20, 8)
+size = Vector2(8, 8)
 
 [node name="Door" type="Node2D"]
 

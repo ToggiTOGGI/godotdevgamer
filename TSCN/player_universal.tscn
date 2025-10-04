@@ -13,6 +13,9 @@ script/source = "extends CharacterBody2D
 const SPEED := 40.0
 var last_dir: String = \"down\"   # remember last facing direction
 var nearby_interactable: Node = null
+func _ready():
+	position=PlayerInfo.playerpos
+	
 func play_standing(dir: String) -> void:
 	var anim_name = \"standing_\" + dir
 	if anim.animation != anim_name:
@@ -52,7 +55,7 @@ func play_walking(dir: Vector2) -> void:
 		anim.play(anim_name)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Get input as a vector
 	var input_dir: Vector2 = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
 	velocity = input_dir * SPEED
