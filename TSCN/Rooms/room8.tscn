@@ -186,3 +186,6 @@ tile_set = SubResource("TileSet_jqalm")
 z_index = 1
 tile_map_data = PackedByteArray("AAD9/wgAAAAPAAIAAAAwAAkAAAAPAAIAAAA=")
 tile_set = SubResource("TileSet_g6jv2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 71.30300000000001

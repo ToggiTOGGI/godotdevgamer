@@ -409,6 +409,7 @@ size = Vector2(24.615385, 8.888888)
 script = SubResource("GDScript_csuth")
 
 [node name="player_skin" type="AnimatedSprite2D" parent="player"]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_s4l64")
 animation = &"walking_upright"
 
