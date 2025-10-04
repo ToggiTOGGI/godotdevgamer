@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://drffhuqvefppr"]
 
-[ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_nkt7f"]
+[ext_resource type="Texture2D" uid="uid://du6aiyvrosca5" path="res://Picture Assets/sprite_overworld_tileset.png" id="1_nkt7f"]
 
 [sub_resource type="GDScript" id="GDScript_uawxf"]
 script/source = "extends StaticBody2D
@@ -27,4 +27,4 @@ shape = SubResource("RectangleShape2D_p5jpa")
 position = Vector2(-0.47593582, -6)
 texture = ExtResource("1_nkt7f")
 region_enabled = true
-region_rect = Rect2(144, 0, 16, 16)
+region_rect = Rect2(224, 0, 16, 16)
