@@ -4,5 +4,5 @@ func _ready():
 	add_to_group("interactable")
 
 func activate():
-	PlayerInfo.playerpos = Vector2(300,86)
+	PlayerInfo.playerpos = Vector2(300,89)
 	get_tree().change_scene_to_file("res://TSCN/room1.tscn")

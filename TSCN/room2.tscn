@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_864af"]
 [ext_resource type="PackedScene" uid="uid://iusw1ght33mn" path="res://TSCN/player_universal.tscn" id="2_xlabe"]
-[ext_resource type="Script" uid="uid://dmhp2q78mjdab" path="res://dotgd/room2_to_room1_west.gd" id="3_xlabe"]
+[ext_resource type="Script" uid="uid://d3bjis3tmfsvt" path="res://dotgd/area_2d.gd" id="4_gydhs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v4n"]
 texture = ExtResource("1_864af")
@@ -177,6 +177,7 @@ texture = ExtResource("1_864af")
 sources/0 = SubResource("TileSetAtlasSource_j7v4n")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gydhs"]
+size = Vector2(16, 16)
 
 [node name="Node2D" type="Node2D"]
 
@@ -187,17 +188,13 @@ tile_set = SubResource("TileSet_kgaip")
 [node name="player" parent="TileMapLayer" instance=ExtResource("2_xlabe")]
 position = Vector2(1, -2)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer"]
-position = Vector2(313, 87)
-script = ExtResource("3_xlabe")
+[node name="Area2D" type="Area2D" parent="TileMapLayer"]
+position = Vector2(8, 88)
+script = ExtResource("4_gydhs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
-position = Vector2(-312, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/Area2D"]
 shape = SubResource("RectangleShape2D_gydhs")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="TileMapLayer"]
-position = Vector2(313, 87)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D2"]
-position = Vector2(-312, 0)
-shape = SubResource("RectangleShape2D_gydhs")
+[connection signal="body_entered" from="TileMapLayer/Area2D" to="TileMapLayer/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/Area2D" to="TileMapLayer/Area2D" method="_on_body_exited"]
+[connection signal="input_event" from="TileMapLayer/Area2D" to="TileMapLayer/Area2D" method="_on_input_event"]
