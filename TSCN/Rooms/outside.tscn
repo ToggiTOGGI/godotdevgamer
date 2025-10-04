@@ -1,10 +1,10 @@
 [gd_scene load_steps=53 format=4 uid="uid://bepc1liu45su4"]
 
 [ext_resource type="Texture2D" uid="uid://du6aiyvrosca5" path="res://Picture Assets/sprite_overworld_tileset.png" id="1_24pxs"]
-[ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_pyvco"]
+[ext_resource type="Texture2D" path="res://Picture Assets/1bit graphics.png" id="1_pyvco"]
 [ext_resource type="Texture2D" uid="uid://cs6kvquaswf72" path="res://Picture Assets/interaction_prompt.png" id="2_i7vbf"]
 [ext_resource type="Script" uid="uid://faqa2w4yil4q" path="res://dotgd/interaction_prompt.gd" id="3_ku5i6"]
-[ext_resource type="PackedScene" uid="uid://drffhuqvefppr" path="res://TSCN/object_chest.tscn" id="4_nnj4j"]
+[ext_resource type="PackedScene" uid="uid://drffhuqvefppr" path="res://TSCN/Object/object_chest.tscn" id="4_nnj4j"]
 [ext_resource type="PackedScene" uid="uid://cwih6o4y4q240" path="res://TSCN/npc_1.tscn" id="5_i7vbf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8r3b"]

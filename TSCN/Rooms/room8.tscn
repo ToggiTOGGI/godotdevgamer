@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://keu80765fvj7"]
 
-[ext_resource type="Texture2D" uid="uid://du6aiyvrosca5" path="res://Picture Assets/sprite_overworld_tileset.png" id="1_gnnka"]
+[ext_resource type="Texture2D" uid="uid://du6aiyvrosca5" path="res://Picture Assets/sprite_overworld_tileset.png" id="1_l457c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nx48i"]
-texture = ExtResource("1_gnnka")
+texture = ExtResource("1_l457c")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -90,7 +90,7 @@ texture = ExtResource("1_gnnka")
 sources/0 = SubResource("TileSetAtlasSource_nx48i")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2s3ip"]
-texture = ExtResource("1_gnnka")
+texture = ExtResource("1_l457c")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
