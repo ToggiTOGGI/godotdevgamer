@@ -1,10 +1,12 @@
-[gd_scene load_steps=56 format=4 uid="uid://b2r01wi0awmk2"]
+[gd_scene load_steps=58 format=4 uid="uid://b2r01wi0awmk2"]
 
 [ext_resource type="Texture2D" uid="uid://6ugpqlggm3re" path="res://Picture Assets/1bit graphics.png" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://co44pt0bdyh5e" path="res://TSCN/invisible_wall.tscn" id="2_0e48y"]
 [ext_resource type="PackedScene" uid="uid://drffhuqvefppr" path="res://TSCN/object_chest.tscn" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://cs6kvquaswf72" path="res://Picture Assets/interaction_prompt.png" id="3_q6r6c"]
 [ext_resource type="Script" uid="uid://faqa2w4yil4q" path="res://dotgd/interaction_prompt.gd" id="4_kdubu"]
+[ext_resource type="PackedScene" uid="uid://vqu1wsiuj18j" path="res://TSCN/door.tscn" id="6_3rcwa"]
+[ext_resource type="Script" uid="uid://pb0i0104e2sb" path="res://dotgd/door_activation.gd" id="7_ywh6e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtcfe"]
 texture = ExtResource("1_wtcfe")
@@ -723,6 +725,7 @@ texture = ExtResource("1_wtcfe")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0hol4"]
 scenes/1/scene = ExtResource("2_epypp")
+scenes/2/scene = ExtResource("6_3rcwa")
 
 [sub_resource type="TileSet" id="TileSet_epypp"]
 sources/0 = SubResource("TileSetAtlasSource_0e48y")
@@ -780,7 +783,7 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="Layer 2 - objects" type="TileMapLayer" parent="Y-Sorting"]
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAQD+//7/AQAAAAAAAgA=")
 tile_set = SubResource("TileSet_epypp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -790,6 +793,11 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="enter_outside" parent="." instance=ExtResource("6_3rcwa")]
+
+[node name="door_activation" type="Node" parent="enter_outside"]
+script = ExtResource("7_ywh6e")
 
 [connection signal="body_entered" from="Y-Sorting/player/Area2D" to="Y-Sorting/player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Y-Sorting/player/Area2D" to="Y-Sorting/player" method="_on_area_2d_body_exited"]

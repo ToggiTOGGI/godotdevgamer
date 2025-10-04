@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://vqu1wsiuj18j"]
+[gd_scene load_steps=3 format=3 uid="uid://vqu1wsiuj18j"]
+
+[ext_resource type="Script" uid="uid://bvpcrxjsu5w2f" path="res://dotgd/door_body.gd" id="1_kg27j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0ghi"]
 size = Vector2(20, 8)
 
 [node name="Door" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Door_body" type="StaticBody2D" parent="."]
+script = ExtResource("1_kg27j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Door_shape" type="CollisionShape2D" parent="Door_body"]
 shape = SubResource("RectangleShape2D_s0ghi")
