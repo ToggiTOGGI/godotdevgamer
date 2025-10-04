@@ -10,7 +10,7 @@ script/source = "extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $player_skin
 @onready var interaction_prompt = $interaction_prompt
-const SPEED := 20.0
+const SPEED := 40.0
 var last_dir: String = \"down\"   # remember last facing direction
 var nearby_interactable: Node = null
 func play_standing(dir: String) -> void:
@@ -403,16 +403,16 @@ size = Vector2(24.615385, 8.888888)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hpbo"]
 
-[node name="Root" type="Node2D"]
+[node name="player" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="."]
 script = SubResource("GDScript_csuth")
 
 [node name="player_skin" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("SpriteFrames_s4l64")
-animation = &"walking_downleft"
+animation = &"walking_down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="player_collision" type="CollisionShape2D" parent="player"]
 position = Vector2(0, 5.875)
 scale = Vector2(0.285, 0.475)
 shape = SubResource("RectangleShape2D_1end6")
@@ -425,8 +425,11 @@ script = ExtResource("3_pc7mv")
 
 [node name="Interact" type="Area2D" parent="player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Interact"]
+[node name="interaction_collision" type="CollisionShape2D" parent="player/Interact"]
 shape = SubResource("RectangleShape2D_7hpbo")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(5, 5)
 
 [connection signal="body_entered" from="player/Interact" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="player/Interact" to="player" method="_on_area_2d_body_exited"]

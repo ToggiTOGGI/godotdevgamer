@@ -10,7 +10,7 @@ size = Vector2(8, 8)
 script/source = "extends Sprite2D
 
 func _ready():
-	visible=Engine.is_editor_hint()
+	visible=false
 "
 
 [node name="Node2D" type="Node2D"]
