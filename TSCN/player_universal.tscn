@@ -235,7 +235,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -243,7 +243,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -251,7 +251,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -259,7 +259,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -276,7 +276,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -293,7 +293,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_downleft",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -310,7 +310,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_downright",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -327,7 +327,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -344,7 +344,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -361,7 +361,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -378,7 +378,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_upleft",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -395,7 +395,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_upright",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1end6"]
@@ -411,7 +411,8 @@ script = SubResource("GDScript_csuth")
 [node name="player_skin" type="AnimatedSprite2D" parent="player"]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_s4l64")
-animation = &"walking_upright"
+animation = &"walking_downleft"
+frame_progress = 0.24290718
 
 [node name="player_collision" type="CollisionShape2D" parent="player"]
 position = Vector2(0, 5.875)
