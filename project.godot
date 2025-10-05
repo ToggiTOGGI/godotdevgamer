@@ -15,6 +15,10 @@ run/main_scene="uid://ce8no8br63jd5"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Picture Assets/icon.svg"
 
+[autoload]
+
+PlayerInfo="*res://dotgd/player_info.gd"
+
 [display]
 
 window/zstd/window_log_size=27

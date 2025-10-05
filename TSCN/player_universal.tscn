@@ -13,6 +13,18 @@ script/source = "extends CharacterBody2D
 const SPEED := 40.0
 var last_dir: String = \"down\"   # remember last facing direction
 var nearby_interactable: Node = null
+func _ready():
+	add_to_group(\"player\")
+	position=PlayerInfo.playerpos
+	
+	
+func set_interactable(node):
+	nearby_interactable = node
+	interaction_prompt.is_prompted(true)
+func clear_interactable():
+	nearby_interactable = null
+	interaction_prompt.is_prompted(false)
+
 func play_standing(dir: String) -> void:
 	var anim_name = \"standing_\" + dir
 	if anim.animation != anim_name:
@@ -52,7 +64,7 @@ func play_walking(dir: Vector2) -> void:
 		anim.play(anim_name)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Get input as a vector
 	var input_dir: Vector2 = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
 	velocity = input_dir * SPEED
@@ -235,7 +247,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -243,7 +255,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -251,7 +263,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -259,7 +271,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"standing_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -276,7 +288,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -293,7 +305,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_downleft",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -310,7 +322,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_downright",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -327,7 +339,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -344,7 +356,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -361,7 +373,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -378,7 +390,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_upleft",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -395,7 +407,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking_upright",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1end6"]
@@ -411,6 +423,7 @@ script = SubResource("GDScript_csuth")
 [node name="player_skin" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("SpriteFrames_s4l64")
 animation = &"walking_down"
+frame_progress = 0.11731789
 
 [node name="player_collision" type="CollisionShape2D" parent="player"]
 position = Vector2(0, 5.875)
