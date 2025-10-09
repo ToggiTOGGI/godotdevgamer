@@ -10,13 +10,26 @@ script/source = "extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $player_skin
 @onready var interaction_prompt = $interaction_prompt
-const SPEED := 40.0
-var last_dir: String = \"down\"   # remember last facing direction
+@onready var cam = $Camera2D
+var SPEED = PlayerInfo.player_speed
+var last_dir: String = \"down\"  # remember last facing direction
 var nearby_interactable: Node = null
 func _ready():
 	add_to_group(\"player\")
-	position=PlayerInfo.playerpos
-	
+	last_dir = PlayerInfo.faced_dir
+	global_position=PlayerInfo.playerpos
+
+func set_camera_limits_from_area(area: Area2D):
+	var shape = area.get_node(\"CollisionShape2D\").shape
+	if shape is RectangleShape2D:
+		var pos = area.global_position
+		var size = shape.extents * 2
+		
+		cam.limit_left = pos.x - shape.extents.x
+		cam.limit_top = pos.y - shape.extents.y
+		cam.limit_right = pos.x + shape.extents.x
+		cam.limit_bottom = pos.y + shape.extents.y
+
 	
 func set_interactable(node):
 	nearby_interactable = node
@@ -62,6 +75,7 @@ func play_walking(dir: Vector2) -> void:
 
 	if anim.animation != anim_name:
 		anim.play(anim_name)
+
 
 
 func _physics_process(_delta):
