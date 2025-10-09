@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://5p2n5bnixkhp"]
+[gd_scene load_steps=13 format=4 uid="uid://5p2n5bnixkhp"]
 
 [ext_resource type="Script" uid="uid://b0kut25m1jw80" path="res://dotgd/room_2.gd" id="1_sqd8t"]
 [ext_resource type="Texture2D" uid="uid://du6aiyvrosca5" path="res://Picture Assets/sprite_overworld_tileset.png" id="1_xlabe"]
 [ext_resource type="PackedScene" uid="uid://iusw1ght33mn" path="res://TSCN/player_universal.tscn" id="2_xlabe"]
-[ext_resource type="Script" uid="uid://dit3yn5mo1jr8" path="res://dotgd/room2_left.gd" id="3_i8tei"]
-[ext_resource type="Script" uid="uid://drm7thljmmsvj" path="res://dotgd/room2_right.gd" id="3_ve1t4"]
+[ext_resource type="Script" path="res://dotgd/room2_left.gd" id="3_i8tei"]
+[ext_resource type="Script" path="res://dotgd/room2_right.gd" id="3_ve1t4"]
+[ext_resource type="Script" uid="uid://pq2ehp65vrk2" path="res://dotgd/room2_up.gd" id="6_8jpxy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gydhs"]
 texture = ExtResource("1_xlabe")
@@ -222,12 +223,14 @@ shape = SubResource("RectangleShape2D_2tms3")
 z_index = 2
 position = Vector2(152, -9)
 rotation = -1.5707964
+script = ExtResource("6_8jpxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Up"]
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_2tms3")
 
 [node name="CameraBounds" type="Area2D" parent="."]
+visible = false
 position = Vector2(152, 88)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBounds"]
@@ -237,3 +240,5 @@ shape = SubResource("RectangleShape2D_8jpxy")
 [connection signal="body_exited" from="Right" to="Right" method="_on_body_exited"]
 [connection signal="body_entered" from="Left" to="Left" method="_on_body_entered"]
 [connection signal="body_exited" from="Left" to="Left" method="_on_body_exited"]
+[connection signal="body_entered" from="Up" to="Up" method="_on_body_entered"]
+[connection signal="body_exited" from="Up" to="Up" method="_on_body_exited"]

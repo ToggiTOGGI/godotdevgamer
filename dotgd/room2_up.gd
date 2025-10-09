@@ -5,12 +5,13 @@ func _ready():
 	
 
 func activate():
-	PlayerInfo.playerpos = Vector2(152,-20)
-	PlayerInfo.faced_dir = "down"
-	get_tree().change_scene_to_file("res://TSCN/Rooms/room2.tscn")
-	
-	
-	
+	PlayerInfo.playerpos = Vector2(-55,281)
+	PlayerInfo.faced_dir = "up"
+	get_tree().change_scene_to_file("res://TSCN/Rooms/room4.tscn")
+
+
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.set_interactable(self)

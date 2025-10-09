@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://ce8no8br63jd5"]
+[gd_scene load_steps=9 format=4 uid="uid://ce8no8br63jd5"]
 
 [ext_resource type="Texture2D" uid="uid://du6aiyvrosca5" path="res://Picture Assets/sprite_overworld_tileset.png" id="1_b13bp"]
 [ext_resource type="PackedScene" uid="uid://iusw1ght33mn" path="res://TSCN/player_universal.tscn" id="2_b13bp"]
+[ext_resource type="Script" uid="uid://besdgchy2x63s" path="res://dotgd/room3_left.gd" id="3_36u5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btei5"]
 texture = ExtResource("1_b13bp")
@@ -177,6 +178,9 @@ texture = ExtResource("1_b13bp")
 [sub_resource type="TileSet" id="TileSet_1iahg"]
 sources/1 = SubResource("TileSetAtlasSource_1iahg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i82h4"]
+size = Vector2(30, 16)
+
 [node name="Room4" type="Node2D"]
 
 [node name="Main" type="TileMapLayer" parent="."]
@@ -190,3 +194,16 @@ tile_set = SubResource("TileSet_1iahg")
 
 [node name="player" parent="." instance=ExtResource("2_b13bp")]
 position = Vector2(-63, 265)
+
+[node name="Left" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(-55, 281)
+rotation = -1.5707964
+script = ExtResource("3_36u5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_i82h4")
+
+[connection signal="body_entered" from="Left" to="Left" method="_on_body_entered"]
+[connection signal="body_exited" from="Left" to="Left" method="_on_body_exited"]
