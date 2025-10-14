@@ -4,10 +4,13 @@ func _ready():
 	add_to_group("interactable")
 	
 
+
+
 func activate():
-	PlayerInfo.playerpos = Vector2(-9,88)
 	PlayerInfo.faced_dir = "right"
-	get_tree().change_scene_to_file("res://TSCN/Rooms/room2.tscn")
+	GlobalFunctions.transition_to_scene("res://TSCN/Rooms/room2.tscn",Vector2(-9,88))
+#	PlayerInfo.playerpos = Vector2(-9,88)
+#	get_tree().change_scene_to_file("res://TSCN/Rooms/room2.tscn")
 	
 
 

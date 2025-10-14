@@ -179,7 +179,6 @@ texture = ExtResource("2_gau25")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qhif2"]
 scenes/1/scene = ExtResource("3_47r5v")
-scenes/1/display_placeholder = ExtResource("3_47r5v")
 
 [sub_resource type="TileSet" id="TileSet_fegsi"]
 sources/0 = SubResource("TileSetAtlasSource_gau25")
