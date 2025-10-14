@@ -18,6 +18,7 @@ config/icon="res://Picture Assets/icon.svg"
 [autoload]
 
 PlayerInfo="*res://dotgd/player_info.gd"
+GlobalFunctions="*res://dotgd/global_functions.gd"
 
 [display]
 
