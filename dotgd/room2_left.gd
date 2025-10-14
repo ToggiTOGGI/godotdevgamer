@@ -5,9 +5,10 @@ func _ready():
 	
 
 func activate():
-	PlayerInfo.playerpos = Vector2(311,88)
+	#PlayerInfo.playerpos = Vector2(311,88)
 	PlayerInfo.faced_dir = "left"
-	get_tree().change_scene_to_file("res://TSCN/Rooms/room1.tscn")
+	GlobalFunctions.transition_to_scene("res://TSCN/Rooms/room1.tscn",Vector2(311,88))
+	#get_tree().change_scene_to_file("res://TSCN/Rooms/room1.tscn")
 	
 
 
