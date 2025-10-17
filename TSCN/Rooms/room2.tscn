@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b0kut25m1jw80" path="res://dotgd/room_2.gd" id="1_sqd8t"]
 [ext_resource type="Texture2D" uid="uid://du6aiyvrosca5" path="res://Picture Assets/sprite_overworld_tileset.png" id="1_xlabe"]
 [ext_resource type="PackedScene" uid="uid://iusw1ght33mn" path="res://TSCN/player_universal.tscn" id="2_xlabe"]
-[ext_resource type="Script" path="res://dotgd/room2_left.gd" id="3_i8tei"]
-[ext_resource type="Script" path="res://dotgd/room2_right.gd" id="3_ve1t4"]
+[ext_resource type="Script" uid="uid://dit3yn5mo1jr8" path="res://dotgd/room2_left.gd" id="3_i8tei"]
+[ext_resource type="Script" uid="uid://drm7thljmmsvj" path="res://dotgd/room2_right.gd" id="3_ve1t4"]
 [ext_resource type="Script" uid="uid://pq2ehp65vrk2" path="res://dotgd/room2_up.gd" id="6_8jpxy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gydhs"]
@@ -216,7 +216,7 @@ position = Vector2(-9, 88)
 script = ExtResource("3_i8tei")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-position = Vector2(8, 0)
+position = Vector2(-30, 0)
 shape = SubResource("RectangleShape2D_2tms3")
 
 [node name="Up" type="Area2D" parent="."]

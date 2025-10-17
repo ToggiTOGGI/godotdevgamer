@@ -80,6 +80,8 @@ func play_walking(dir: Vector2) -> void:
 
 func _physics_process(_delta):
 	# Get input as a vector
+	if PlayerInfo.player_freeze==true:
+		return
 	var input_dir: Vector2 = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
 	velocity = input_dir * SPEED
 
