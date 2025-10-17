@@ -16,6 +16,7 @@ func play_transition(new_scene: String, player_pos: Vector2):
 	visible = true
 
 	# Pixelate (fade out)
+	PlayerInfo.player_freeze = true
 	for i in range(49, 0, -1):
 		filter.material.set_shader_parameter("pixel_size", i * 1.0)
 		await get_tree().create_timer(0.01).timeout
@@ -33,5 +34,6 @@ func play_transition(new_scene: String, player_pos: Vector2):
 	for i in range(0, 50):
 		filter.material.set_shader_parameter("pixel_size", i * 1.0)
 		await get_tree().create_timer(0.01).timeout
+	PlayerInfo.player_freeze = false
 	visible = false
 	is_running = false

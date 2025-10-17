@@ -5,7 +5,7 @@ func _ready():
 	
 
 func activate():
-	PlayerInfo.playerpos = Vector2(152,-20)
+	PlayerInfo.playerpos = Vector2(297,88)
 	PlayerInfo.faced_dir = "down"
 	get_tree().change_scene_to_file("res://TSCN/Rooms/room2.tscn")
 	
